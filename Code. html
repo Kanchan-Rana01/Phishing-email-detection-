@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Phishing Detector</title>
+</head>
+<body>
+
+<h2>Phishing Email Detector</h2>
+
+<textarea id="email" rows="6" cols="40" placeholder="Paste email here"></textarea><br><br>
+
+<button onclick="check()">Check</button>
+
+<p id="result"></p>
+
+<script>
+function check() {
+  let text = document.getElementById("email").value.toLowerCase();
+
+  if (
+    text.includes("lottery") ||
+    text.includes("click here") ||
+    text.includes("verify") ||
+    text.includes("password") ||
+    text.includes("winner")
+  ) {
+    document.getElementById("result").innerHTML = "⚠️ Suspicious Email";
+  } else {
+    document.getElementById("result").innerHTML = "✅ Looks Safe";
+  }
+}
+</script>
+
+</body>
+</html>
